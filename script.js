@@ -75,6 +75,13 @@ const panelBoleta    = document.getElementById("panel-boleta");
 const avisoConexion  = document.getElementById("aviso-conexion");
 const btnTema        = document.getElementById("btn-tema");
 
+const formularioAdministracion = document.getElementById("form-administracion");
+const inputNombreProducto = document.getElementById("nombre-producto");
+const inputPrecioProducto = document.getElementById("precio-producto");
+const inputStockProducto = document.getElementById("stock-producto");
+const inputImagenProducto = document.getElementById("imagen-producto");
+const selectCategoriaProducto = document.getElementById("categoria-producto");
+
 
 
 /* =========================================================================
@@ -792,5 +799,27 @@ function actualizarPantalla() {
 
         console.log(`Tienda lista con ${inventarioProductos.length} productos.`);
     })();
+
+    /* =========================================================================
+   9. PANEL DE ADMINISTRACIÓN
+   ========================================================================= */
+
+const registrarProducto = function (evento) {
+    evento.preventDefault();
+
+    const nuevoProducto = {
+        id: inventarioProductos.length + 1,
+        nombre: inputNombreProducto.value,
+        categoria: selectCategoriaProducto.value,
+        precio: Number(inputPrecioProducto.value),
+        stock: Number(inputStockProducto.value),
+        icono: inputImagenProducto.value
+    };
+
+    inventarioProductos.push(nuevoProducto);
+    renderizarProductos();
+};
+
+formularioAdministracion.addEventListener("submit", registrarProducto);
 
 
