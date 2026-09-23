@@ -35,6 +35,13 @@
         </div>
     </header>
 
+    <!-- Navegación principal -->
+    <nav class="navegacion-principal">
+        <a href="#catalogo">Tienda</a>
+        <a href="#administracion">Administración</a>
+        <a href="#">Mi página personal</a>
+    </nav>
+
     <!-- Aviso de conexión: JavaScript lo muestra con los eventos online/offline -->
     <p id="aviso-conexion" class="aviso-conexion oculto">
         Sin conexión a internet. Puedes seguir navegando, pero no podrás confirmar el pedido.
@@ -45,8 +52,74 @@
          ================================================================== -->
     <main class="contenedor-principal">
 
+        <!-- Panel de administración -->
+    <section id="administracion" class="panel-administracion">
+        <h2>Panel de administración</h2>
+
+        <form id="form-administracion" class="form-administracion">
+
+            <div class="campo-formulario">
+                <label for="nombre-producto">Nombre del producto</label>
+                <input
+                    type="text"
+                    id="nombre-producto"
+                    placeholder="Ej: papaya"
+                    required
+                >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="precio-producto">Precio</label>
+                <input
+                    type="number"
+                    id="precio-producto"
+                    placeholder="Ej: 15.5"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="stock-producto">Stock inicial</label>
+                <input
+                    type="number"
+                    id="stock-producto"
+                    placeholder="Ej: 10"
+                    min="0"
+                    required
+                 >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="imagen-producto">Imagen del producto</label>
+                <input
+                    type="text"
+                    id="imagen-producto"
+                    placeholder="Ej: images/papaya.jpg"
+                    required
+                >
+            </div>
+
+            <div class="campo-formulario">
+                <label for="categoria-producto">Categoría</label>
+                <select id="categoria-producto" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="fruta">Fruta</option>
+                    <option value="verdura">Verdura</option>
+                    <option value="bebida">Bebida</option>
+                </select>
+            </div>
+
+            <button type="submit" class="boton">
+                Registrar producto
+            </button>
+
+        </form>
+    </section>
+
         <!-- ---------- COLUMNA IZQUIERDA: CATÁLOGO ---------- -->
-        <section class="columna-catalogo">
+        <section id="catalogo" class="columna-catalogo">
 
             <div class="barra-filtros">
                 <h2>Catálogo</h2>
